@@ -27,3 +27,6 @@
 
 **9. Duplicate last line**
 *script that duplicates last line*
+
+**No more javascript**
+*Script deletes all javascript in a working directory*
