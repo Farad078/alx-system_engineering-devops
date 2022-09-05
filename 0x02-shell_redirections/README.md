@@ -24,3 +24,6 @@
 
 **8. Save current state of directory**
 *Writes into a file*
+
+**9. Duplicate last line**
+*script that duplicates last line*
