@@ -18,3 +18,9 @@
 
 **6. Line 2**
 *Displays the third line of the file iacta*
+
+**7. It is a good file that cuts iron without making noise**
+*creates a file*
+
+**8. Save current state of directory**
+*Writes into a file*
