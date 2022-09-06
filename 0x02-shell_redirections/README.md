@@ -42,3 +42,6 @@
 
 **14. It must be in that file**
 *Display lines containing the pattern "root" from the file /etc/passwd*
+
+**15. Count that word**
+*Displays the number of lines*
