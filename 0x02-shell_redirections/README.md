@@ -28,5 +28,8 @@
 **9. Duplicate last line**
 *script that duplicates last line*
 
-**No more javascript**
+**10. No more javascript**
 *Script deletes all javascript in a working directory*
+
+**11. Don't just count your directories, make your directories count**
+*A script that counts the number of directories and sub-directories in the current directory.*
