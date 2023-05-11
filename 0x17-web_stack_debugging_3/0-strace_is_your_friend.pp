@@ -1,21 +1,6 @@
-# /etc/puppet/manifests/apache.pp
+# Fixes bad `phpp` extensions to `php`
 
-class apache {
-  file { "/etc/httpd/conf.d/myconfig.conf":
-    ensure => file,
-    owner  => 'root',
-    group  => 'root',
-    mode   => '0644',
-    source => "puppet:///modules/apache/myconfig.conf",
-    notify => Service['httpd'],
-  }
-
-  service { 'httpd':
-    ensure => running,
-    enable => true,
-    require => File["/etc/httpd/conf.d/myconfig.conf"],
-  }
+exec { 'fix-wordpress':
+  command => 'sed -i s/phpp/php/g /var/www/html/wp-settings.php',
+  path    => '/usr/local/bin/:/bin/'
 }
-
-include apache
-
