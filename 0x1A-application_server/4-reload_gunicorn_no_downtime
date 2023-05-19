@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Define the Gunicorn process name
+GUNICORN_PROCESS_NAME="gunicorn"
+
+# Find the process IDs of the Gunicorn workers
+WORKER_PIDS=$(pgrep -f "$GUNICORN_PROCESS_NAME: worker")
+
+# Check if Gunicorn is running
+if [[ -z "$WORKER_PIDS" ]]; then
+    echo "Gunicorn is not running"
+    exit 1
+fi
+
+echo "Reloading Gunicorn gracefully..."
+
+# Send a graceful reload signal to each worker
+for PID in $WORKER_PIDS; do
+    echo "Sending graceful reload signal to worker: $PID"
+    kill -s HUP "$PID"
+done
+
+echo "Graceful reload complete"
+
+exit 0
+
